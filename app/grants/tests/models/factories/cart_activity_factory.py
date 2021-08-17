@@ -13,6 +13,4 @@ class CartActivityFactory(factory.django.DjangoModelFactory):
     
     grant = factory.SubFactory(GrantFactory)
     profile = factory.SubFactory(ProfileFactory)
-    metadata = {}
-    bulk = True
-    latest = True
+    action = ''

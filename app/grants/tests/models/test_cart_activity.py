@@ -1,5 +1,7 @@
 import pytest
+from dashboard.models import Profile
 from grants.models.cart_activity import CartActivity
+from grants.models.grant import Grant
 
 from .factories.cart_activity_factory import CartActivityFactory
 
@@ -11,42 +13,32 @@ class TestCartActivity:
 
         assert isinstance(cart_activity, CartActivity)
 
-    def test_cart_activity_has_add_remove_and_clear_actions(self):
-        ACTIONS = (
-            ('ADD_ITEM', 'Add item to cart'),
-            ('REMOVE_ITEM', 'Remove item to cart'),
-            ('CLEAR_CART', 'Clear cart')
-        )
-        cart_activity = CartActivityFactory()
-
-        assert cart_activity.ACTIONS == ACTIONS
-
     def test_cart_activity_belongs_to_grant(self):
         cart_activity = CartActivityFactory()
 
-        assert cart_activity.grant.id != None
+        assert isinstance(cart_activity.grant, Grant)
 
     def test_cart_activity_belongs_to_profile(self):
         cart_activity = CartActivityFactory()
         
-        assert cart_activity.profile.id != None
+        assert isinstance(cart_activity.profile, Profile)
 
     def test_cart_activity_has_action_attribute(self):
         cart_activity = CartActivityFactory()
 
-        assert cart_activity.action != None
+        assert hasattr(cart_activity, "action")
 
     def test_cart_activity_has_metadata_attribute(self):
         cart_activity = CartActivityFactory()
 
-        assert cart_activity.metadata == {}
+        assert hasattr(cart_activity, "metadata")
     
     def test_cart_activity_has_bulk_attribute(self):
         cart_activity = CartActivityFactory()
 
-        assert cart_activity.bulk == True
+        assert hasattr(cart_activity, "bulk")
 
     def test_cart_activity_has_latest_attribute(self):
         cart_activity = CartActivityFactory()
 
-        assert cart_activity.latest == True
+        assert hasattr(cart_activity, "latest")
