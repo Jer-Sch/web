@@ -21,6 +21,11 @@ class TestCartActivity:
 
         assert cart_activity.ACTIONS == ACTIONS
 
+    def test_cart_activity_belongs_to_grant(self):
+        cart_activity = CartActivityFactory()
+
+        assert cart_activity.grant.id != None
+
     def test_cart_activity_belongs_to_profile(self):
         cart_activity = CartActivityFactory()
         
