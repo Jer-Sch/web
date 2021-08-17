@@ -1,5 +1,4 @@
 import factory
-
 from dashboard.models import Profile
 
 

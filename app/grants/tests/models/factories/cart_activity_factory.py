@@ -1,9 +1,9 @@
-import pytest
 import factory
-
-from grants.models.cart_activity import CartActivity
-from grant_factory import GrantFactory
+import pytest
 from dashboard.tests.factories.profile_factory import ProfileFactory
+from grants.models.cart_activity import CartActivity
+
+from .grant_factory import GrantFactory
 
 
 @pytest.mark.django_db

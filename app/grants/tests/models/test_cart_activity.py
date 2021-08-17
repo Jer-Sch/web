@@ -1,7 +1,7 @@
 import pytest
 from grants.models.cart_activity import CartActivity
 
-from .factories import CartActivityFactory
+from .factories.cart_activity_factory import CartActivityFactory
 
 
 @pytest.mark.django_db
@@ -31,7 +31,12 @@ class TestCartActivity:
         
         assert cart_activity.profile.id != None
 
-    def test_cart_activity_has_metadata(self):
+    def test_cart_activity_has_action_attribute(self):
+        cart_activity = CartActivityFactory()
+
+        assert cart_activity.action != None
+
+    def test_cart_activity_has_metadata_attribute(self):
         cart_activity = CartActivityFactory()
 
         assert cart_activity.metadata == {}
