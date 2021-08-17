@@ -36,4 +36,7 @@ class TestCartActivity:
 
         assert cart_activity.bulk == True
 
-    
+    def test_cart_activity_has_latest_attribute(self):
+        cart_activity = CartActivityFactory()
+
+        assert cart_activity.latest == True
