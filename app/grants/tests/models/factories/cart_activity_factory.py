@@ -8,6 +8,8 @@ from .grant_factory import GrantFactory
 
 @pytest.mark.django_db
 class CartActivityFactory(factory.django.DjangoModelFactory):
+    """Create mock CartActivity for testing."""
+
     class Meta:
         model = CartActivity
     
