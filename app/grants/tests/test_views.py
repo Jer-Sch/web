@@ -38,3 +38,8 @@ class GrantsViewResponsesTests(TestCase):
         self.assertEqual(json.loads(response.content)['categories'], expected_response['categories'])
         '''
         pass
+
+    def this_is_a_test(self):
+        """This is only a test."""
+        
+        pass
